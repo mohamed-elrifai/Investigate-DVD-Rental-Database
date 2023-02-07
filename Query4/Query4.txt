@@ -1,0 +1,14 @@
+/*
+   Query4 : 
+	We want to find out the total Profit for each store of the 2 stores gain.
+*/
+
+
+SELECT 
+  ('Store ' || c.store_id) AS Store_ID,   ROUND(SUM(p.amount)) Profit
+FROM customer c
+JOIN payment p
+  ON c.customer_id = p.customer_id
+group by Store_ID
+ORDER BY Profit DESC
+                                                   
